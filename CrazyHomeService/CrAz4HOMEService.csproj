@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{B73185D0-630D-4FE5-8FF3-8BE1DDA5D161}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>HomeOfficerService</RootNamespace>
-    <AssemblyName>HomeOfficerService</AssemblyName>
+    <RootNamespace>CrazyDebug</RootNamespace>
+    <AssemblyName>CrazyDebug.Service</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>HomeOfficerService.Program</StartupObject>
+    <StartupObject>CrazyDebug.Service.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
@@ -58,13 +58,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExternalTools\ApplicationLoader.cs" />
     <Compile Include="HomeOfficerService.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="HomeOfficerService.Designer.cs">
       <DependentUpon>HomeOfficerService.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProcessExtensions.cs" />
+    <Compile Include="ExternalTools\ProcessExtensions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="ProjectInstaller.cs">
       <SubType>Component</SubType>
@@ -94,10 +95,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ScreenRecorederFramework\CrAz4HOMEProcess.csproj">
+    <ProjectReference Include="..\CrazyHomeProcess\CrAz4HOMEProcess.csproj">
       <Project>{8f79cdaa-d3bf-440c-9bc4-827cc3aebbef}</Project>
       <Name>CrAz4HOMEProcess</Name>
-      <EmbedInteropTypes>False</EmbedInteropTypes>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

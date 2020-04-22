@@ -14,6 +14,8 @@ namespace CrazyDebug.ProcessTools
         private static readonly Logger _logger = LogManager.GetCurrentClassLogger();
         private bool _enabled = false;
 
+
+
         public bool Start()
         {
             _logger.Info("Start() starting");

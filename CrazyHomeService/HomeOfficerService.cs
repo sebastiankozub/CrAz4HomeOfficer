@@ -9,12 +9,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Timers;
 using System.Runtime.InteropServices;
-using ScreenRecorederFramework;
+using CrazyDebug.App;
 using murrayju;
 using murrayju.ProcessExtensions;
 using NLog;
 
-namespace HomeOfficerService
+namespace CrazyDebug.Service
 {
     public enum ServiceState
     {

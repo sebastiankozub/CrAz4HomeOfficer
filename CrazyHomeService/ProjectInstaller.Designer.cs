@@ -1,4 +1,4 @@
-﻿namespace HomeOfficerService
+﻿namespace CrazyDebug.Service
 {
     partial class ProjectInstaller
     {
