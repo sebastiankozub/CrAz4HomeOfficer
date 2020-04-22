@@ -94,9 +94,4 @@ Feel free to propose ideas, fork or clone. After forking this repository, you ca
 
 201. Proper application log pattern & implementation on whole codebase.
 202. Clean Code. General cleaning.
-203. Find nice Unit Testing pattern to the solution. 
-
-
-
-
-
+203. Find nice Unit Testing pattern to the solution - specific and breaking Windows security rules application functionalities.
