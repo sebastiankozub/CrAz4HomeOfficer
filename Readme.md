@@ -1,6 +1,6 @@
 # CrAz4 HOME Officer
 
-Hobbist POC project  to check some functionalities and have some fun
+Hobbist-POC magic windows service project to play with some restricted functionalities and have lot of fun.
 
 ## Core functionalities
 
@@ -19,26 +19,26 @@ Hobbist POC project  to check some functionalities and have some fun
 
 ### Installing new functionality
 
-Extension implementing `IProcessTool` can be added by adding 3 lines of code: 
+Extensions implementing `IProcessTool` can be added with 3 lines of code: 
 
 ```C#
-            var toolsManager = new ProcessToolManager<IProcessTool>();
-            toolsManager.Install("desktopKeyHook", new KeyboardHooker());
+	var toolsManager = new ProcessToolManager<IProcessTool>();
+	toolsManager.Install("desktopKeyHook", new KeyboardHooker());
 ```
-
 ```C#
-            var keyCombinationToActionMap = new Dictionary<Combination, Action>
-            {
-                { Combination.FromString("Control+K+L"), () => { tools.GetByName("desktopKeyHook").Start(); } },
-                { Combination.FromString("Control+K+J"), () => { tools.GetByName("desktopKeyHook").Stop(); } }
-            };
+	var keyCombinationToActionMap = new Dictionary<Combination, Action>
+	{
+		{ Combination.FromString("Control+K+L"), () => { tools.GetByName("desktopKeyHook").Start(); } },
+		{ Combination.FromString("Control+K+J"), () => { tools.GetByName("desktopKeyHook").Stop(); } }
+	};
 ```
 
 ## Invitation to Contribution
 
 Feel free to propose ideas, fork or clone. After forking this repository, you can make some changes to the project, and submit a Pull Request as practice.
 
-# TODO:
+
+# TODO - List of tasks & ideas
 
 ## General
 
