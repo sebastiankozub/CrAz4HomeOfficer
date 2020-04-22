@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		hook_info.txt = hook_info.txt
 		Readme.md = Readme.md
-		some_saves.txt = some_saves.txt
+		some_saves_and_notes.txt = some_saves_and_notes.txt
 	EndProjectSection
 EndProject
 Global

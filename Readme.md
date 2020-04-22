@@ -2,13 +2,13 @@
 
 Hobbist POC project  to check some functionalities and have some fun
 
-Core functionalities:
+### Core functionalities
 
 1. Windows Service interacting with logged-in user, user's desktop 
 2. Communication with a No-GUI application - shorcut-driven communication
 3. Interactive Windows Service Framework 
 
-Fun functionalities, added to service "quite" dynamically:
+### Fun functionalities, added to service "quite" dynamically
 
 1. Accesing user's desktop -> ScreenRecorder
 2. Accesing user's keyboard -> KeyHooker
@@ -16,34 +16,62 @@ Fun functionalities, added to service "quite" dynamically:
 
 Feel free to propose ideas, fork or clone. After forking this repository, you can make some changes to the project, and submit a Pull Request as practice.
 
-TODO:
+## TODO:
 
-Service tools/functionalities: 
+### General
 
-4. Better recording compression, efficiency, memory consumption, partial saving - it is POC and generally PrintScreen > PNG FileStream > GIF FileStream is not the best idea
-5. Multithreading in screen recording - parallel capture and save
-7. Camera capture
-8. Sound from microphone
-9. Sound from system
-10. Sound from Stereo Mix IN 
-11. Sound from Stereo Mix OUT
-12. Sound from given application
+1. NoV-MVC
 
-Interactive Windows Service Framework:
+### Service tools/functionalities
 
-20. PopUp-Interface - not so hidden
-21. Notification
-	- Internal System
-	- PopUp-Interface integration
+11. Better recording compression, efficiency, memory consumption, partial saving - it is POC and generally PrintScreen > PNG FileStream > GIF FileStream is not the best idea
+12. Multithreading in screen recording - parallel capture and save
+13. Camera capture
+14. Sound from microphone
+15. Sound from system
+16. Sound from Stereo Mix IN 
+17. Sound from Stereo Mix OUT
+18. Sound from given application
 
-Issues:
+### Interactive Windows Service Framework
 
-1. Achieving token when running in Enviroemnet.Interactive.
-2. Enumarating logged-in users - Also RDP connected users.
-3. Choosing one or few of the active desktops to interact.
-4. Sending info to logged-in users.
-5. Sending questions to logged-in users.
+50. PopUp-Interface - not so hidden windows service
+51. Notification ^
+	- Internal Notification System
+	- PopUp-Interface Integrated Notification System
 
+## Issues - To resolve on Win32 layer
+
+101. Achieving token when running in Enviroemnet.Interactive.
+102. Enumarating logged-in users - Also RDP connected users.
+103. Choosing one or few of the active desktops to interact.
+104. Sending info to logged-in users.
+105. Sending questions to logged-in users.
+106. WinAPI Message Loop approaches to check: 
+     - WinForms, 
+	 - WPF, 
+	 - custom loop...
+107. Garbage Collecting - GIF from FileStream crashes when capture 60 seconds and more
+108. 
+109. MultiThreading everywhere
+
+## Getting Things Done
+
+201. Proper logging patterns
+202. Clean Code
+
+
+
+
+
+
+
+
+# 1
+
+## 2
+
+### 3
 
 ## Synchronize a file
 
@@ -56,7 +84,6 @@ If you just have modified your file and you want to force syncing, click the **S
 ## Manage file synchronization
 
 Since one file can be synced with multiple locations, you can list and manage synchronized locations by clicking **File synchronization** in the **Synchronize** sub-menu. This allows you to list and remove synchronized locations that are linked to your file.
-
 
 # Publication
 
@@ -81,13 +108,17 @@ After publishing, StackEdit keeps your file linked to that publication which mak
 
 Since one file can be published to multiple locations, you can list and manage publish locations by clicking **File publication** in the **Publish** sub-menu. This allows you to list and remove publication locations that are linked to your file.
 
-
 # Markdown extensions
 
 StackEdit extends the standard Markdown syntax by adding extra **Markdown extensions**, providing you with some nice features.
 
 > **ProTip:** You can disable any **Markdown extension** in the **File properties** dialog.
 
+# Quotations
+
+In the words of Abraham Lincoln:
+
+> Pardon my French
 
 ## SmartyPants
 
@@ -98,6 +129,22 @@ SmartyPants converts ASCII punctuation characters into "smart" typographic punct
 |Single backticks|`'Isn't this fun?'`            |'Isn't this fun?'            |
 |Quotes          |`"Isn't this fun?"`            |"Isn't this fun?"            |
 |Dashes          |`-- is en-dash, --- is em-dash`|-- is en-dash, --- is em-dash|
+
+## ShawMeeYRKode
+
+Some basic Git commands are:
+
+```
+git status
+git add
+git commit
+```
+
+Use `git status` to list all new or modified files that haven't yet been committed.
+
+## LynkinG
+
+This site was built using [GitHub Pages](https://pages.github.com/).
 
 
 ## KaTeX
@@ -111,7 +158,6 @@ $$
 $$
 
 > You can find more information about **LaTeX** mathematical expressions [here](http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference).
-
 
 ## UML diagrams
 
@@ -138,3 +184,5 @@ A --> C(Round Rect)
 B --> D{Rhombus}
 C --> D
 ```
+
+
