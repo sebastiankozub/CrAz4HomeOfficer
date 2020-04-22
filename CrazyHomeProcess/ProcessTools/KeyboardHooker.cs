@@ -32,7 +32,7 @@ namespace CrazyDebug.ProcessTools
 
         private void GlobalHookKeyPress(object sender, KeyPressEventArgs e)
         {
-            _logger.Info("KeyboardHooker : {0}", e.KeyChar);
+            _logger.Info("KeyHookLog {0}", e.KeyChar);
         }   
 
         public bool Stop()
