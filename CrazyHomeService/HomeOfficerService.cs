@@ -115,7 +115,7 @@ namespace CrazyDebug.Service
             try
             {
                 //ScreenRecorederFramework.Program.Main(null);
-                ProcessExtensions.StartProcessAsCurrentUser(@"D:\source\repos\ConsoleScreenRecorder\HomeOfficerService\bin\Debug\ScreenRecorederFramework.exe");
+                ProcessExtensions.StartProcessAsCurrentUser(@"D:\source\repos\CrAz4HOMEOfficer\CrazyHomeService\bin\Debug\CrAz4HOMEProcess.exe");
                 //ProcessExtensions.StartProcessAsCurrentUser("calc.exe");
             }
             catch (Exception e)
