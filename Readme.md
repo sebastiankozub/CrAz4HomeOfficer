@@ -42,10 +42,11 @@ var keyCombinationToActionMap = new Dictionary<Combination, Action>
 
 Feel free to propose ideas, fork or clone. After forking this repository, you can make some changes to the project, and submit a Pull Request as practice. 
 
-
 # TODO - List of tasks & ideas 
 
-## General 
+Excusme me for the mess below - kind of backlog, sticky notes and idea's log in one file ;) 
+
+## General improvments 
 
 1. NoV-MVC: NoView MVC, SNoVC: service - no-view - contoller - create kind of windows service framework or pattern 
 
