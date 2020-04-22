@@ -1,26 +1,36 @@
 # CrAz4 HOME Officer
 
-Hobbist-POC magic windows service project to play with some restricted functionalities and have lot of fun.
+Hobbist-POC magic windows service project to play with some restricted functionalities and have lot of fun. 
+Generally, using power of LocalSystem and service Automatic start when you are your PC owner :)
+
+Technologies: pure C#, Console/Windows application, Windows Service, Win32API - old style system events using
 
 ## Core functionalities
 
-1. Windows Service interacting with logged-in user & user's desktop 
-2. Communication with No-GUI application: 
-   - keyboard-driven communication 
-   - directory observer 
-   - pipeline 
-   - IPC 
-   - Message Queue 
-3. Interactive Windows Service Framework 
-4. Easy-to-extend functionalities system 
+1. Windows Service interacting with logged-in user & user's desktop
+2. Communication with No-GUI application:
+   - keyboard-driven menu and actions
+   - directory observer, text file with communicate
+   - IPC: pipeline, Message Queue
+3. Framework for bigger (Interactive) Windows Service solutions
+4. Easy-to-extend functionality system
+5. Detecing active application and keyboard shortcuts mapping (for example Ctrl+G+H is the same in few applications)
+6. Keyboard shortcuts mapping, routing to commands in service, in running application, running EXEs
+7. Generally, using power of LocalSystem when you are your PC owner :)
 
-## Easy-to-extend functionalities system 
+## Easy-to-extend functionality system
+
+Service as a base for growing list of small helpers - easy to install and extend. 
+For example screen recording with some fixed codec to specific dir is one functionality
+that can work without others. 
 
 ### Funny functionalities, adding to service "quite" dynamically 
 
-1. Accesing user's desktop -> ScreenRecorder 
-2. Accesing user's keyboard -> KeyHooker 
-3. Mixing functionalities -> KeyHooker + ScreenRecorder 
+1. Accesing user's desktop -> ScreenRecorder: ToFile, ToEndpoint, etc. 
+2. Accesing user's keyboard -> KeyHooker: ToFile, ToScreen, etc. 
+3. Mixing functionalities:
+	KeyHooker + ScreenRecorder + SkypeAudio + Microfon In -> Record Skype meeting without informing Skype ;)
+4. Running quickly with keyboard shortcut
 
 ### Installing new functionality 
 
@@ -38,25 +48,30 @@ var keyCombinationToActionMap = new Dictionary<Combination, Action>
 };
 ```
 
+## Framework for Interactive Windows Service
+
+Simply creating and shaping some universal frame for similar solutions that with time could become standalone project. 
+
 ## Invitation to Contribution 
 
 Feel free to propose ideas, fork or clone. After forking this repository, you can make some changes to the project, and submit a Pull Request as practice. 
 
 # TODO - List of tasks & ideas 
 
-Excusme me for the mess below - kind of backlog, sticky notes and idea's log in one file ;) 
+Excuse me me for mess below - it is kind of backlog, sticky notes and idea's log in one file ;) 
 
 ## General improvments 
 
-1. NoV-MVC: NoView MVC, SNoVC: service - no-view - contoller - create kind of windows service framework or pattern 
+1. NoVMC - NoView-Model-Controller, SNoVC: service - no-view - contoller - create kind of windows service framework or pattern 
+2. Additionally there is some plan to have view but basic plan is interactive process interactively not visible ;) 
 
 ## Service tools/functionalities
 
 11. Better recording:
-   - compression 
+   - compression
    - efficiency
-   - memory consumption 
-   - partial saving 
+   - memory consumption
+   - partial saving
    - multithreading
    - parallel processing
    - it is POC and generally PrintScreen > PNG FileStream > GIF FileStream is not the best idea
@@ -64,8 +79,8 @@ Excusme me for the mess below - kind of backlog, sticky notes and idea's log in 
 14. Sound from microphone
 15. Sound from system
 16. Sound from Stereo Mix IN
-17. Sound from Stereo Mix OUT = 15?
-18. Sound from fixed application
+17. Sound from Stereo Mix OUT (same as 15.?)
+18. Sound from fixed application (Skype, YT, etc)
 
 ## Interactive Windows Service Framework
 
@@ -105,6 +120,3 @@ Excusme me for the mess below - kind of backlog, sticky notes and idea's log in 
 
 211. TXT and MD files - make order with information inside and with the files generally
 212. 
-
-
-
