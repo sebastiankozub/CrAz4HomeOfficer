@@ -5,21 +5,26 @@ Hobbist-POC magic windows service project to play with some restricted functiona
 ## Core functionalities
 
 1. Windows Service interacting with logged-in user & user's desktop 
-2. Communication with a No-GUI application - keyboard-driven communication, directory observer
+2. Communication with No-GUI application: 
+  - keyboard-driven communication 
+  - directory observer 
+  - pipeline 
+  - IPC 
+  - Message Queue 
 3. Interactive Windows Service Framework 
-4. Easy-to-extend functionalities system
+4. Easy-to-extend functionalities system 
 
-## Easy-to-extend functionalities system
+## Easy-to-extend functionalities system 
 
-### Funny functionalities, adding to service "quite" dynamically
+### Funny functionalities, adding to service "quite" dynamically 
 
-1. Accesing user's desktop -> ScreenRecorder
-2. Accesing user's keyboard -> KeyHooker
-3. Mixing functionalities -> KeyHooker + ScreenRecorder
+1. Accesing user's desktop -> ScreenRecorder 
+2. Accesing user's keyboard -> KeyHooker 
+3. Mixing functionalities -> KeyHooker + ScreenRecorder 
 
-### Installing new functionality
+### Installing new functionality 
 
-Extensions implementing `IProcessTool` can be added with 3 lines of code: 
+Trying to find some Windows Servis Framwork during casual tasks resolving and implementing new functionalities leads to: New extensions to functionalitites list implementing `IProcessTool` can be added with 3 lines of code still keeping View/User Interface layer separate from application and business logic. 
 
 ```C#
 	var toolsManager = new ProcessToolManager<IProcessTool>();
@@ -33,16 +38,16 @@ Extensions implementing `IProcessTool` can be added with 3 lines of code:
 	};
 ```
 
-## Invitation to Contribution
+## Invitation to Contribution 
 
-Feel free to propose ideas, fork or clone. After forking this repository, you can make some changes to the project, and submit a Pull Request as practice.
+Feel free to propose ideas, fork or clone. After forking this repository, you can make some changes to the project, and submit a Pull Request as practice. 
 
 
-# TODO - List of tasks & ideas
+# TODO - List of tasks & ideas 
 
-## General
+## General 
 
-1. NoV-MVC: NoView MVC, SNoVC: service - no-view - contoller - kind of windows service framework
+1. NoV-MVC: NoView MVC, SNoVC: service - no-view - contoller - create kind of windows service framework or pattern 
 
 ## Service tools/functionalities
 
