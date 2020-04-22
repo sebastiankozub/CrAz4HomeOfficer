@@ -100,3 +100,11 @@ Excusme me for the mess below - kind of backlog, sticky notes and idea's log in 
 201. Proper application log pattern & implementation on whole codebase
 202. Clean Code. General cleaning
 203. Find nice Unit Testing pattern to the solution - specific and breaking Windows security rules application functionalities
+
+## Quick refactorings
+
+211. TXT and MD files - make order with information inside and with the files generally
+212. 
+
+
+
