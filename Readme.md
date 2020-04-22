@@ -6,11 +6,11 @@ Hobbist-POC magic windows service project to play with some restricted functiona
 
 1. Windows Service interacting with logged-in user & user's desktop 
 2. Communication with No-GUI application: 
-  - keyboard-driven communication 
-  - directory observer 
-  - pipeline 
-  - IPC 
-  - Message Queue 
+   - keyboard-driven communication 
+   - directory observer 
+   - pipeline 
+   - IPC 
+   - Message Queue 
 3. Interactive Windows Service Framework 
 4. Easy-to-extend functionalities system 
 
@@ -24,18 +24,18 @@ Hobbist-POC magic windows service project to play with some restricted functiona
 
 ### Installing new functionality 
 
-Trying to find some Windows Servis Framwork during casual tasks resolving and implementing new functionalities leads to: New extensions to functionalitites list implementing `IProcessTool` can be added with 3 lines of code still keeping View/User Interface layer separate from application and business logic. 
+During task resolving and implementing new functionalities all the time focusing on some reusable pattern or framework for Windows Service applications brought me here: New extensions to functionalitites list implementing `IProcessTool` can be added with 3 lines of code still keeping View/User Interface layer separate from application and business logic. 
 
 ```C#
-	var toolsManager = new ProcessToolManager<IProcessTool>();
-	toolsManager.Install("desktopKeyHook", new KeyboardHooker());
+var toolsManager = new ProcessToolManager<IProcessTool>();
+toolsManager.Install("desktopKeyHook", new KeyboardHooker());
 ```
 ```C#
-	var keyCombinationToActionMap = new Dictionary<Combination, Action>
-	{
-		{ Combination.FromString("Control+K+L"), () => { tools.GetByName("desktopKeyHook").Start(); } },
-		{ Combination.FromString("Control+K+J"), () => { tools.GetByName("desktopKeyHook").Stop(); } }
-	};
+var keyCombinationToActionMap = new Dictionary<Combination, Action>
+{
+	{ Combination.FromString("Control+K+L"), () => { tools.GetByName("desktopKeyHook").Start(); } },
+	{ Combination.FromString("Control+K+J"), () => { tools.GetByName("desktopKeyHook").Stop(); } }
+};
 ```
 
 ## Invitation to Contribution 
@@ -70,8 +70,8 @@ Feel free to propose ideas, fork or clone. After forking this repository, you ca
 
 50. PopUp-Interface - not so hidden windows service
 51. Notification ^
-	- Internal Notification System
-	- PopUp-Interface Integrated Notification System
+    - Internal Notification System
+    - PopUp-Interface Integrated Notification System
 52. Terminal
 53. CLI
 54. Terminal PopUp-Interface
@@ -81,22 +81,21 @@ Feel free to propose ideas, fork or clone. After forking this repository, you ca
 
 ## Issues - To resolve on Win32 layer
 
-101. Achieving token when running in Interactive Enviroemnet.
-102. Enumarating logged-in users - Also RDP connected users.
-103. Choosing one or few of the active desktops to interact.
-104. Sending info to logged-in users.
-105. Sending questions to logged-in users.
+101. Achieving token when running in Interactive Enviroemnet
+102. Enumarating logged-in users - Also RDP connected users
+103. Choosing one or few of the active desktops to interact
+104. Sending info to logged-in users
+105. Sending questions to logged-in users
 106. WinAPI Message Loop approaches to check:
-     - WinForms,
-	 - WPF,
-	 - custom loop...
+    - WinForms,
+    - WPF,
+    - custom WinAPI loop
 107. Garbage Collecting - GIF from FileStream crashes when capture 60 seconds and more
-108. 
-109. More MultiThreading everywhere
-110. 
+108. More MultiThreading everywhere, MT screen saving and movie encoders. 
+109. Async menu, Async WinApi Message Loop message dispaching.
 
 ## Getting Things Done
 
-201. Proper application log pattern & implementation on whole codebase.
-202. Clean Code. General cleaning.
-203. Find nice Unit Testing pattern to the solution - specific and breaking Windows security rules application functionalities.
+201. Proper application log pattern & implementation on whole codebase
+202. Clean Code. General cleaning
+203. Find nice Unit Testing pattern to the solution - specific and breaking Windows security rules application functionalities
