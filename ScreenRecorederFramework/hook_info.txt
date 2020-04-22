@@ -1,0 +1,48 @@
+﻿We have just found this in our application. We added this DWORD to the registry and the problem went away.
+HKEY_CURRENT_USER\Control Panel\Desktop\
+LowLevelHooksTimeout=10000
+
+Here is a registry script to insert SMenagh's sln. copy paste into a ".reg" file.
+Windows Registry Editor Version 5.00
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+"LowLevelHooksTimeout"=dword:00002710
+
+And here is a script to delete it again.
+Windows Registry Editor Version 5.00
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+"LowLevelHooksTimeout"=-
+
+Dear colleagues,
+   I believe that this method (increasing timeout to 10 sec) was wrongly marked by moderator as the answer to the problem. 
+By such logic - another "answer" would be to exchange computer to faster one, because it probably will solve the problem.
+This really shows that the reason is the bug in Windows 7 : "No low level mouse hook calls will be made after any exceeding of
+the LowLevelHooksTimeout occurs. And it is true only for Windows7"
+
+   More of that, such change could lead to system performance issues and not acceptable solution for the commercial programs.
+
+I have the following workaround:
+Create and start during initialization a separate thread which sets the mouse_ll hook and proceeds win message queue,
+like this:
+
+DWORD WINAPI mouseLLHookThreadProc(LPVOID lParam)
+{
+    MSG msg;
+
+    _hMouseLLHook = SetWindowsHookEx( WH_MOUSE_LL, .....);
+
+    while(GetMessage(&msg, NULL, 0, 0) != FALSE)
+    {
+        TranslateMessage(&msg);
+        DispatchMessage(&msg);
+    }
+
+    return 0;
+}
+
+This will make your mouse_ll processing independent of main GUI thread of the application.
+But, again, this is just workaround for Win7 bug behavior
+
+Regards
+
+
+/////////////////////////////////
