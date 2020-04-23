@@ -14,6 +14,9 @@ Hobbist-POC magic windows service project to play with some restricted functiona
 3. Interactive Windows Service Framework 
 4. Easy-to-extend functionalities system 
 
+`Service` is a casual Windows service application giving possibility to start casual Windows EXE Console/Window application executable as user process in given desktop environment. 
+`Process` is the process run by `Service`. Is uses WinForms's Application.Run() message pump to get events from operating system and no-window ApplicationContexct to get desired [no window but interactive] functionality. 
+
 ## Easy-to-extend functionalities system 
 
 ### Funny functionalities, adding to service "quite" dynamically 
@@ -76,27 +79,48 @@ Excusme me for the mess below - kind of backlog, sticky notes and idea's log in 
 52. Terminal
 53. CLI
 54. Terminal PopUp-Interface
-55. Easy-to-extend functionalities - configureastion options, terminal options... 
+55. Easy-to-extend functionalities - configureastion options, terminal options 
 56. Asynchronous user interface - if we can call the interface like this ;) 
 57. IProcessTool to implement Subscriber-Observer or INotifyProperty to integrate and use Notification System
 
 ## Issues - To resolve on Win32 layer
 
-101. Achieving token when running in Interactive Enviroemnet
+101. Achieving token when running in Interactive Enviroemnet - no LocalSsytem account / simply run Main()  ;)  but still there are problem with enumarating and getting session's tokens
 102. Enumarating logged-in users - Also RDP connected users
 103. Choosing one or few of the active desktops to interact
 104. Sending info to logged-in users
 105. Sending questions to logged-in users
-106. WinAPI Message Loop approaches to check:
-    - WinForms,
-    - WPF,
+106. Forcing user's to agree on some new internal rules 
+106. Few Message Pump approaches to check possibilities to run application without window form:
+    - WinForms
+    - WPF
     - custom WinAPI loop
+
+	Example custom WinAPI loop here specific to start a thread that only liten to the mouse events:
+
+```C#
+DWORD WINAPI mouseLLHookThreadProc(LPVOID lParam)
+{
+    MSG msg;
+
+    _hMouseLLHook = SetWindowsHookEx( WH_MOUSE_LL, .....);
+
+    while(GetMessage(&msg, NULL, 0, 0) != FALSE)
+    {
+        TranslateMessage(&msg);
+        DispatchMessage(&msg);
+    }
+
+    return 0;
+}
+```
+
 107. Garbage Collecting - GIF from FileStream crashes when capture 60 seconds and more
-108. More MultiThreading everywhere, MT screen saving and movie encoders. 
-109. Async menu, Async WinApi Message Loop message dispaching.
+108. More MultiThreading everywhere, MT screen saving and movie encoders
+109. Async menu, Async WinApi Message Loop message dispaching
 
 ## Getting Things Done
 
 201. Proper application log pattern & implementation on whole codebase
 202. Clean Code. General cleaning
-203. Find nice Unit Testing pattern to the solution - specific and breaking Windows security rules application functionalities
+203. Find nice Unit Testing pattern [or simply good architecture allowing SoC and UT with one approach] to the solution - specific noUI and breaking Windows security rules application functionalities

@@ -152,7 +152,10 @@ namespace CrazyDebug.ProcessToolsEngines
                         //tempStream.
                     }
 
-                    //gifBitmapEncoder.op
+                    //GC.Collect();
+                    //GC.WaitForPendingFinalizers();
+
+                    GC.Collect(2);
 
                     _Logger.Info("ScreenRecorder.Save() save GIF");
                     using (var fileStream = new FileStream(outpuFilename, FileMode.Create, FileAccess.Write))

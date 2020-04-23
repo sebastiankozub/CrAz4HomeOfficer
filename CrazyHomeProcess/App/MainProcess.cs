@@ -56,9 +56,6 @@ namespace CrazyDebug.App
             globalEventHook.Dispose();
 
             _Logger.Info("Main() Exit");
-
-            GC.Collect();
-            GC.WaitForPendingFinalizers();
         }
 
         static void _heartbeatTimerTick(object sender, EventArgs e)
