@@ -1,10 +1,10 @@
 # CrAz4 HOME Officer
 
-Hobbist or POC project. Magic `windows service` to play with some restricted OS functionalities and have a lot of fun. Read warning :)
+POC/Hobbist project. CrAz4 is `windows service` project started to play with some restricted OS functionalities and have a lot of fun and knowledge. **WARNING!!! Read WARNING Below!!! ;)**
 
 ### !!! WARNING !!! Running the code on your own developer's responsibility only!!! Setting shortcut binding to system or security win32 or similar methods what can bo done easily with the code can lead to secure information leakage. As CrAz4 POC is trying to prove it is not so hard to work on someone's desktop w/o user and password. Quickest explanation is service leveraged to LocalSystem priviliges and possibility to start invisible WinForms app on system start. 
 
-Magic CrAz4 `windows service` project to play with some restricted functionalities and have a lot of fun. Some kind of wrapper for small useful services running as invisible and with special rights on all desktop/rdp accounts. Generally, using power of `LocalSystem` and service `Automatic start` when you are your PC owner.
+Magic CrAz4 `windows service` project to play with some restricted functionalities and have a lot of fun. Wrapper for small useful services running as invisible and with special rights on all desktop/rdp accounts. Generally, using power of `LocalSystem` and service `Automatic start` when you are your PC owner.
 
 Technologies: pure C#, Console/Windows application, Windows Service, Win32 API - old style system events to get some system methods
 
