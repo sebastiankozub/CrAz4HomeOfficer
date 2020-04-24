@@ -175,3 +175,12 @@ DWORD WINAPI mouseLLHookThreadProc(LPVOID lParam)
 201. Proper application log pattern & implementation on whole codebase
 202. Clean Code. General cleaning
 203. Find nice Unit Testing pattern to the solution - specific and breaking Windows security rules application functionalities
+
+#TODO (quick memory save)
+async menu, 
+multithreading in capturing process, 
+temporary partial save of output, 
+efficieny, 
+keylogger outputs conf, 
+
+
